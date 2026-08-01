@@ -1,4 +1,4 @@
-# #DECORATORS
+# #SECTİON 1:DECORATORS
 #
 # print("-"*60)
 # print("Section 1: Decorators")
@@ -20,7 +20,7 @@
 #
 #
 #
-# #PROPERTY DECORATORS
+# #SECTİON 2: PROPERTY DECORATORS
 # print("-"*60)
 # print("Section 2: Property Decorators")
 # print("-"*60)
@@ -41,7 +41,7 @@
 #
 # omer=(Person("Ömer", 20))
 # print(omer.name)
-# omer.name="ömer kazak "
+# omer.name="Omer Kazak "
 # print(omer.name)
 # omer.name="ö"
 # print(omer.name)
@@ -117,60 +117,88 @@
 # my_information.password="123456789"
 # print(my_information.password)
 #
+#
+# class Product:
+#     def __init__(self,name,price,stock):
+#         self.__name=name
+#         self.__price=price
+#         self.__stock=stock
+#     @property
+#     def name(self):
+#         return self.__name
+#     @property
+#     def price(self):
+#         return self.__price
+#     @property
+#     def stock(self):
+#         return self.__stock
+#     @name.setter
+#     def name(self,value):
+#         if not isinstance(value,str):
+#             raise TypeError("The name must be a string.")
+#         if len(value)<3:
+#             raise ValueError("The name cannot be shorter than 3 characters.")
+#         else:
+#             self.__name = value
+#     @price.setter
+#     def price(self,value):
+#         if not isinstance(value,int):
+#             raise TypeError("The price must be an integer.")
+#         if value<0:
+#             raise ValueError("The fee cannot be less than 0.")
+#         else:
+#             self.__price = value
+#     @stock.setter
+#     def stock(self,value):
+#         if not isinstance(value,int):
+#             raise TypeError("The stock must be an integer.")
+#         if value<0:
+#             raise ValueError("Stock cannot be less than 0.")
+#         else:
+#             self.__stock =value
+#     @name.deleter
+#     def name(self):
+#         self.__name = None
+# my_product=Product("Notebook",50,20)
+# my_product.name="Pe"
+# print(my_product.name)
+# my_product.price=-100
+# print(my_product.price)
+# my_product.stock=-10
+# print(my_product.stock)
+# my_product.name="Pencil"
+# print(my_product.name)
+# my_product.price=200
+# print(my_product.price)
+# my_product.stock=5
+# print(my_product.stock)
+# del my_product.name
+# print(my_product.name)
 
-class Product:
-    def __init__(self,name,price,stock):
-        self.__name=name
-        self.__price=price
-        self.__stock=stock
-    @property
-    def name(self):
-        return self.__name
-    @property
-    def price(self):
-        return self.__price
-    @property
-    def stock(self):
-        return self.__stock
-    @name.setter
-    def name(self,value):
-        if not isinstance(value,str):
-            raise TypeError("The name must be a string.")
-        if len(value)<3:
-            raise ValueError("The name cannot be shorter than 3 characters.")
-        else:
-            self.__name = value
-    @price.setter
-    def price(self,value):
-        if not isinstance(value,int):
-            raise TypeError("The price must be an integer.")
-        if value<0:
-            raise ValueError("The fee cannot be less than 0.")
-        else:
-            self.__price = value
-    @stock.setter
-    def stock(self,value):
-        if not isinstance(value,int):
-            raise TypeError("The stock must be an integer.")
-        if value<0:
-            raise ValueError("Stock cannot be less than 0.")
-        else:
-            self.__stock =value
-    @name.deleter
-    def name(self):
-        self.__name = None
-my_product=Product("Notebook",50,20)
-my_product.name="Pe"
-print(my_product.name)
-my_product.price=-100
-print(my_product.price)
-my_product.stock=-10
-print(my_product.stock)
-my_product.name="Pencil"
-print(my_product.name)
-my_product.price=200
-print(my_product.price)
-my_product.stock=5
-print(my_product.stock)
-del my_product.name
-print(my_product.name)
+# #SECTİON 3:STATİC METHODS
+#
+print("-"*60)
+print("Section 3: Static Methods")
+print("-"*60)
+
+class MathOperations:
+    @staticmethod
+    def add (x,y):
+        return x + y
+    @staticmethod
+    def divide (x,y):
+        return x / y
+    @staticmethod
+    def subtract (x,y):
+        return x-y
+    @staticmethod
+    def multiply (x,y):
+        return x*y
+
+#
+# math=MathOperations()
+# print(math.add(3,4))
+print(MathOperations.add(1,4))
+print(MathOperations.divide(10,2))
+print(MathOperations.multiply(5,4))
+print(MathOperations.subtract(12,3))
